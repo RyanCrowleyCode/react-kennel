@@ -3,6 +3,7 @@ import './Kennel.css'
 import AnimalCard from './animal/AnimalCard'
 import LocationCard from './location/LocationCard'
 import OwnerCard from './owner/OwnerCard'
+import EmployeeCard from './employee/EmployeeCard'
 
 
 class Kennel extends Component {
@@ -25,6 +26,9 @@ class Kennel extends Component {
                 </div>
                 <div>
                     <OwnerCard />
+                </div>
+                <div>
+                    <EmployeeCard />
                 </div>
                 <div>
                     <LocationCard />
