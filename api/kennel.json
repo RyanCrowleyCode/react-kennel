@@ -36,6 +36,23 @@
             "pictureName": "john-dogson.jpg"
         }
     ],
-    "locations": [],
+    "locations": [
+        {
+            "id": 1,
+            "name": "Nashville North",
+            "street": "500 Puppy Way",
+            "city": "Nashville",
+            "state": "TN",
+            "zip": 37027
+        },
+        {
+            "id": 2,
+            "name": "Nashville South",
+            "street": "123 Canine BLVD",
+            "city": "Nashville",
+            "state": "TN",
+            "zip": 37028
+        }
+    ],
     "owners": []
 }
