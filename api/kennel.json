@@ -15,5 +15,27 @@
             "name": "Esme",
             "breed": "Pitbull"
         }
-    ]
+    ],
+    "employees": [
+        {
+            "id": 1,
+            "name": "David Dogperson",
+            "info": "We are happy to have David on our team! David moved to Nashville in 2017 from North Carolina, where he helped to raise his family's 9 dogs.",
+            "pictureName": "david-dogperson.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Susan Susanite",
+            "info": "Susan is a joy to have on our team! She loves dogs, kittens, and Super Mario.",
+            "pictureName": "susan-susanite.jpg"
+        },
+        {
+            "id": 3,
+            "name": "John Dogson",
+            "info": "John is our least favorite employee. He's always making customers uncomfortable, but he's the owner's nephew and we can't fire him. He hates dogs.",
+            "pictureName": "john-dogson.jpg"
+        }
+    ],
+    "locations": [],
+    "owners": []
 }

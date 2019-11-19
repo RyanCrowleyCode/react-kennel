@@ -5,7 +5,6 @@ class OwnerCard extends Component {
         return (
             <div className="card">
                 <div className="card-content">
-                    <h3>Owner</h3>
                     <picture>
                         <img src={require('./pamela-puppyperson.jpg')} alt="Pamela Puppyperson and her dog." />
                     </picture>
