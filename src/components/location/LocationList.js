@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import LocationCard from './LocationCard'
 import ApiManager from '../../modules/ApiManager'
 
-class AnimalList extends Component {
+class LocationList extends Component {
     //define what this component needs to render
     state = {
         locations: [],
@@ -45,4 +45,4 @@ class AnimalList extends Component {
     }
 }
 
-export default AnimalList
+export default LocationList
