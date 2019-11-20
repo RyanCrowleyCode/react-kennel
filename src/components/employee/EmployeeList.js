@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import EmployeeCard from './EmployeeCard'
-import EmployeeManager from '../../modules/EmployeeManager'
+import ApiManager from '../../modules/ApiManager'
 
 class EmployeeList extends Component {
     //define what this component needs to render
@@ -9,8 +9,8 @@ class EmployeeList extends Component {
     }
 
     componentDidMount() {
-        //getAll from EmployeeManager and hang on to that data; put it in state
-        EmployeeManager.getAll()
+        //getAll from ApiManager and hang on to that data; put it in state
+        ApiManager.getAll("employees")
             .then((employeesArray) => {
                 this.setState({
                     employees: employeesArray
