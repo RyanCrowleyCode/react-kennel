@@ -18,11 +18,26 @@ class EmployeeList extends Component {
             })
     }
 
+    deleteEmployee = id => {
+        ApiManager.delete(id, "employees")
+            .then(() => {
+                ApiManager.getAll("employees")
+                    .then((newEmployees) => {
+                        this.setState({
+                            employees: newEmployees
+                        })
+                    })
+            })
+    }
+
     render() {
         return (
             <div className="container-cards">
                 {this.state.employees.map(employeeObject => 
-                    <EmployeeCard key={employeeObject.id} employee={employeeObject} />
+                    <EmployeeCard 
+                    key={employeeObject.id} 
+                    employee={employeeObject}
+                    deleteEmployee={this.deleteEmployee} />
 
                 )}
             </div>
