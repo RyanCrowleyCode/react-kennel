@@ -6,7 +6,7 @@ class EmployeeCard extends Component {
             <div className="card">
                 <div className="card-content">
                     <picture>
-                        <img src={require(`./${this.props.employee.pictureName}`)} alt="David Dogperson and his dog."/>
+                        <img src={require(`./${this.props.employee.pictureName}`)} alt="employee"/>
                     </picture>
                     <h4>{this.props.employee.name}</h4>
                     <p>{this.props.employee.info}</p>
