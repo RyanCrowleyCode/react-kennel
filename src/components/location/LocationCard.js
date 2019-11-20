@@ -1,14 +1,14 @@
-import React, { Component} from 'react'
+import React, { Component } from 'react'
 
 class LocationCard extends Component {
-    render () {
+    render() {
         return (
             <div className="card">
                 <div className="card-content">
-                    <h3>Address</h3>
+                    <h3>{this.props.location.name}</h3>
                     <p className="address-paragraph">
-                        <span className="street-address">500 Puppy Way</span>
-                        <br /><span className="city">Nashville, </span><span className="state">TN </span><span className="zipcode">37027</span>
+                        <span className="street-address">{this.props.location.street}</span>
+                        <br /><span className="city">{this.props.location.city}, </span><span className="state">{this.props.location.state} </span><span className="zipcode">{this.props.location.zip}</span>
                     </p>
 
                 </div>

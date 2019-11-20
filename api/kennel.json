@@ -1,0 +1,83 @@
+{
+    "animals": [
+        {
+            "id": 1,
+            "name": "Doodles",
+            "breed": "Poodle"
+        },
+        {
+            "id": 2,
+            "name": "Decker",
+            "breed": "German Shepherd"
+        },
+        {
+            "id": 3,
+            "name": "Esme",
+            "breed": "Pitbull"
+        }
+    ],
+    "employees": [
+        {
+            "id": 1,
+            "name": "David Dogperson",
+            "info": "We are happy to have David on our team! David moved to Nashville in 2017 from North Carolina, where he helped to raise his family's 9 dogs.",
+            "pictureName": "david-dogperson.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Susan Susanite",
+            "info": "Susan is a joy to have on our team! She loves dogs, kittens, and Super Mario.",
+            "pictureName": "susan-susanite.jpg"
+        },
+        {
+            "id": 3,
+            "name": "John Dogson",
+            "info": "John is our least favorite employee. He's always making customers uncomfortable, but he's the owner's nephew and we can't fire him. He hates dogs.",
+            "pictureName": "john-dogson.jpg"
+        }
+    ],
+    "locations": [
+        {
+            "id": 1,
+            "name": "Nashville North",
+            "street": "500 Puppy Way",
+            "city": "Nashville",
+            "state": "TN",
+            "zip": 37027
+        },
+        {
+            "id": 2,
+            "name": "Nashville South",
+            "street": "123 Canine BLVD",
+            "city": "Nashville",
+            "state": "TN",
+            "zip": 37028
+        }
+    ],
+    "owners": [
+        {
+            "id": 1,
+            "name": "Steven Stephenson",
+            "phone": "615-123-4567",
+            "animalId": 3
+        },
+        {
+            "id": 2,
+            "name": "Marky Mark",
+            "phone": "931-876-5432",
+            "animalId": 2
+        },
+        {
+            "id": 3,
+            "name": "Maddy Mark",
+            "phone": "931-876-5433",
+            "animalId": 2
+        },
+        {
+            "id": 4,
+            "name": "Lucy Labradoo",
+            "phone": "207-725-1489",
+            "animalId": 1
+        }
+    ]
+}

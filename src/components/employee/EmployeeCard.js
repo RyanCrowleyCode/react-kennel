@@ -5,12 +5,11 @@ class EmployeeCard extends Component {
         return (
             <div className="card">
                 <div className="card-content">
-                    <h3>Employee</h3>
                     <picture>
-                        <img src={require('./david-dogperson.jpg')} alt="David Dogperson and his dog."/>
+                        <img src={require(`./${this.props.employee.pictureName}`)} alt="David Dogperson and his dog."/>
                     </picture>
-                    <h4>David Dogperson</h4>
-                    <p>We are happy to have David on our team! David moved to Nashville in 2017 from North Carolina, where he helped to raise his family's 9 dogs.</p>
+                    <h4>{this.props.employee.name}</h4>
+                    <p>{this.props.employee.info}</p>
                 </div>
             </div>
         )

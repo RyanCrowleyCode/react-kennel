@@ -35,10 +35,15 @@ address {
 }
 
 img {
+  padding: 15px 0;
   display: block;
   border: 0;
-  width: 25%;
+  width: 250px;
   height: auto;
+}
+
+.animal-picture {
+  width: 25%;
 }
 
 .section-content {
