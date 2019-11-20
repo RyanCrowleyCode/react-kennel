@@ -11,11 +11,11 @@ class LocationCard extends Component {
                         <span className="street-address">{this.props.location.street}</span>
                         <br /><span className="city">{this.props.location.city}, </span><span className="state">{this.props.location.state} </span><span className="zipcode">{this.props.location.zip}</span>
                     </p>
-                    <Link to={`/locations/${this.props.location.id}`}><button>Details</button></Link>
                     <button type="button" onClick={() =>
                         this.props.deleteLocation(this.props.location.id)}>
                         Close
                     </button>
+                    <Link to={`/locations/${this.props.location.id}`}><button>Details</button></Link>
 
                 </div>
 
