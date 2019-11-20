@@ -59,30 +59,42 @@
             "id": 1,
             "name": "Pamela Puppyperson",
             "phone": "615-123-4567",
-            "animalId": 3,
             "pictureName": "pamela-puppyperson.jpg"
-
         },
         {
             "id": 2,
             "name": "Marky Mark",
             "phone": "931-876-5432",
-            "animalId": 2,
             "pictureName": "marky-mark.jpg"
-        }, 
+        },
         {
             "id": 3,
             "name": "Maddy Mark",
             "phone": "931-876-5433",
-            "animalId": 2,
             "pictureName": "maddy-mark.jpg"
         },
         {
             "id": 4,
             "name": "Lucy Labradoo",
             "phone": "207-725-1489",
-            "animalId": 1,
             "pictureName": "lucy-labradoo.png"
+        }
+    ],
+    "ownerAnimals": [
+        {
+            "id": 1,
+            "animalId": 2,
+            "ownerId": 2
+        },
+        {
+            "id": 2,
+            "animalId": 2,
+            "ownerId": 3
+        },
+        {
+            "id": 3,
+            "animalId": 1,
+            "ownerId": 1
         }
     ]
 }

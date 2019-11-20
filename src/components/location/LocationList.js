@@ -19,11 +19,26 @@ class AnimalList extends Component {
             })
     }
 
+    deleteLocation = id => {
+        ApiManager.delete(id, "locations")
+            .then(() => {
+                ApiManager.getAll("locations")
+                    .then((newLocations) => {
+                        this.setState({
+                            locations: newLocations
+                        })
+                    })
+            })
+    }
+
     render() {
         return (
             <div className="container-cards">
                 {this.state.locations.map(locationObject =>
-                    <LocationCard key={locationObject.id} location={locationObject} />
+                    <LocationCard
+                        key={locationObject.id}
+                        location={locationObject}
+                        deleteLocation={this.deleteLocation} />
                 )}
             </div>
         )
