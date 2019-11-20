@@ -58,25 +58,25 @@
         {
             "id": 1,
             "name": "Steven Stephenson",
-            "phone-number": "615-123-4567",
+            "phone": "615-123-4567",
             "animalId": 3
         },
         {
             "id": 2,
             "name": "Marky Mark",
-            "phone-number": "931-876-5432",
+            "phone": "931-876-5432",
             "animalId": 2
         },
         {
             "id": 3,
             "name": "Maddy Mark",
-            "phone-number": "931-876-5433",
+            "phone": "931-876-5433",
             "animalId": 2
         },
         {
             "id": 4,
             "name": "Lucy Labradoo",
-            "phone-number": "207-725-1489",
+            "phone": "207-725-1489",
             "animalId": 1
         }
     ]
