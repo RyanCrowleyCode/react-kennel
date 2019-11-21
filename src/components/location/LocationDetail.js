@@ -9,7 +9,8 @@ class LocationDetail extends Component {
       street: "",
       city: "",
       state: "",
-      zip: ""
+      zip: "",
+      loadingStatus: true
   }
 
   componentDidMount(){
@@ -21,10 +22,19 @@ class LocationDetail extends Component {
         street: location.street,
         city: location.city,
         state: location.state,
-        zip: location.zip
+        zip: location.zip,
+        loadingStatus: false
       });
     });
   }
+
+  handleDelete = () => {
+    //invoke the delete function in AnimalManger and re-direct to the animal list.
+    this.setState({loadingStatus: true})
+    ApiManager.delete(this.props.locationId, "locations")
+    // the push will put the /locations url on top of the history stack, so the url will change to /locations
+    .then(() => this.props.history.push("/locations"))
+}
 
   render() {
     return (
@@ -36,6 +46,9 @@ class LocationDetail extends Component {
                 <br></br>City: {this.state.city}
                 <br></br>State: {this.state.state}
                 <br></br>Zip: {this.state.zip}
+                <button type="button" disabled={this.state.loadingStatus} onClick=  {this.handleDelete}>
+                        Close
+                    </button>
             </p>
         </div>
       </div>
