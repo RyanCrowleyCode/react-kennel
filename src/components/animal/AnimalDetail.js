@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ApiManager from '../../modules/ApiManager';
 import './AnimalDetail.css'
+import firstLetterCase from '../../modules/helpers'
 
 class AnimalDetail extends Component {
 
@@ -16,7 +17,7 @@ class AnimalDetail extends Component {
         ApiManager.get(this.props.animalId, "animals")
             .then((animal) => {
                 this.setState({
-                    name: animal.name,
+                    name: firstLetterCase(animal.name),
                     breed: animal.breed,
                     loadingStatus: false
                 })
