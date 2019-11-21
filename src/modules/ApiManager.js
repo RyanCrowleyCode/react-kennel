@@ -13,5 +13,15 @@ export default {
         method: "DELETE"
     })
     .then(result => result.json())
-  }
+  },
+
+  post(newObject, category) {
+    return fetch(`${remoteURL}/${category}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newObject)
+    }).then(data => data.json())
+}
 }

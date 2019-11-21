@@ -33,14 +33,24 @@ class AnimalList extends Component {
 
     render() {
         return (
-            <div className="container-cards">
-                {this.state.animals.map(animalObject =>
-                    <AnimalCard
-                        key={animalObject.id}
-                        animal={animalObject}
-                        deleteAnimal={this.deleteAnimal} />
-                )}
-            </div>
+            <React.Fragment>
+                {/* add this button above your display of animal cards*/}
+                <section className="section-content">
+                    <button type="button"
+                        className="btn"
+                        onClick={() => { this.props.history.push("/animals/new") }}>
+                        Admit Animal
+                    </button>
+                </section>
+                <div className="container-cards">
+                    {this.state.animals.map(animalObject =>
+                        <AnimalCard
+                            key={animalObject.id}
+                            animal={animalObject}
+                            deleteAnimal={this.deleteAnimal} />
+                    )}
+                </div>
+            </React.Fragment>
         )
     }
 }
