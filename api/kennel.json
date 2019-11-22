@@ -63,6 +63,14 @@
       "city": "Nashville",
       "state": "TN",
       "zip": 37028
+    },
+    {
+      "name": "Nashville Highground",
+      "street": "123 AnakinDontTryIt Way",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "31138",
+      "id": 3
     }
   ],
   "owners": [
