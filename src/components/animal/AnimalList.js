@@ -47,7 +47,8 @@ class AnimalList extends Component {
                         <AnimalCard
                             key={animalObject.id}
                             animal={animalObject}
-                            deleteAnimal={this.deleteAnimal} />
+                            deleteAnimal={this.deleteAnimal} 
+                            {...this.props}/>
                     )}
                 </div>
             </React.Fragment>
