@@ -13,6 +13,7 @@ import OwnerForm from './owner/OwnerForm'
 import Login from './auth/Login'
 import AnimalEditForm from './animal/AnimalEditForm'
 import LocationForm from './location/LocationForm'
+import EmployeeDetail from './employee/EmployeeDetail'
 
 
 
@@ -96,6 +97,15 @@ class ApplicationViews extends Component {
             return <Redirect to="/login" />
           }
         }} />
+        <Route path="/employees/:employeeId(\d+)" render={(props) => {
+          if (this.isAuthenticated()) {
+            return <EmployeeDetail employeeId={parseInt(props.match.params.employeeId)} {...props}/>
+          } else {
+            return <Redirect to="/login" />
+          }
+        }}
+        
+        />
         <Route path="/employees/new" render={(props) => {
           if (this.isAuthenticated()) {
             return <EmployeeForm {...props} />
