@@ -33,14 +33,24 @@ class LocationList extends Component {
 
     render() {
         return (
-            <div className="container-cards">
-                {this.state.locations.map(locationObject =>
-                    <LocationCard
-                        key={locationObject.id}
-                        location={locationObject}
-                        deleteLocation={this.deleteLocation} />
-                )}
-            </div>
+            <React.Fragment>
+                <section className="section-content">
+                    <button
+                        type="button"
+                        className="btn"
+                        onClick={() => {this.props.history.push("/locations/new")}}>
+                            Add Location
+                    </button>
+                </section>
+                <div className="container-cards">
+                    {this.state.locations.map(locationObject =>
+                        <LocationCard
+                            key={locationObject.id}
+                            location={locationObject}
+                            deleteLocation={this.deleteLocation} />
+                    )}
+                </div>
+            </React.Fragment>
         )
     }
 }

@@ -9,8 +9,10 @@ import AnimalDetail from './animal/AnimalDetail'
 import LocationDetail from './location/LocationDetail'
 import AnimalForm from './animal/AnimalForm'
 import EmployeeForm from './employee/EmployeeForm'
+import OwnerForm from './owner/OwnerForm'
 import Login from './auth/Login'
 import AnimalEditForm from './animal/AnimalEditForm'
+import LocationForm from './location/LocationForm'
 
 
 
@@ -63,11 +65,19 @@ class ApplicationViews extends Component {
         />
         <Route exact path="/locations" render={(props) => {
           if (this.isAuthenticated()) {
-            return <LocationList />
+            return <LocationList {...props}/>
           } else {
             return <Redirect to="/login" />
           }
         }} />
+        <Route path="/locations/new" render={(props) => {
+          if (this.isAuthenticated()) {
+            return <LocationForm {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
+        }}
+        />
         <Route path="/locations/:locationId(\d+)" render={(props) => {
           // Pass the locationId to the AnimalDetailComponent
           if (this.isAuthenticated()) {
@@ -94,13 +104,21 @@ class ApplicationViews extends Component {
           }
         }}
         />
-        <Route path="/owners" render={(props) => {
+        <Route exact path="/owners" render={(props) => {
           if (this.isAuthenticated()) {
-            return <OwnerList />
+            return <OwnerList {...props}/>
           } else {
             return <Redirect to="/login" />
           }
         }} />
+        <Route path="/owners/new" render={(props) => {
+          if (this.isAuthenticated()) {
+            return <OwnerForm {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
+        }}
+        />
         <Route path="/login" component={Login} />
       </React.Fragment>
     )

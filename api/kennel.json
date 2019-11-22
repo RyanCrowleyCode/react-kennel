@@ -39,6 +39,12 @@
       "name": "John Dogson",
       "info": "John is our least favorite employee. He's always making customers uncomfortable, but he's the owner's nephew and we can't fire him. He hates dogs.",
       "pictureName": "john-dogson.jpg"
+    },
+    {
+      "name": "Mike Personface",
+      "info": "Mike is a great guy! He's real, human, and not pretend. He like dog much.",
+      "pictureName": "defaultEmployee.jpg",
+      "id": 4
     }
   ],
   "locations": [
@@ -57,6 +63,14 @@
       "city": "Nashville",
       "state": "TN",
       "zip": 37028
+    },
+    {
+      "name": "Nashville Highground",
+      "street": "123 AnakinDontTryIt Way",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "31138",
+      "id": 3
     }
   ],
   "owners": [
@@ -83,6 +97,12 @@
       "name": "Lucy Labradoo",
       "phone": "207-725-1489",
       "pictureName": "lucy-labradoo.png"
+    },
+    {
+      "name": "Karl Kaninesfriend",
+      "phone": "(615)-987-1111",
+      "pictureName": "defaultOwner.jpg",
+      "id": 5
     }
   ],
   "ownerAnimals": [
