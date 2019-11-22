@@ -7,6 +7,8 @@ import OwnerList from './owner/OwnerList'
 import EmployeeList from './employee/EmployeeList'
 import AnimalDetail from './animal/AnimalDetail'
 import LocationDetail from './location/LocationDetail'
+import AnimalForm from './animal/AnimalForm'
+import EmployeeForm from './employee/EmployeeForm'
 
 
 
@@ -20,7 +22,7 @@ class ApplicationViews extends Component {
           return <Home />
         }} />
         <Route exact path="/animals" render={(props) => {
-          return <AnimalList />
+          return <AnimalList {...props} />
         }} />
         <Route path="/animals/:animalId(\d+)" render={(props) => {
           // Pass the animalId to the AnimalDetailComponent
@@ -28,6 +30,9 @@ class ApplicationViews extends Component {
             animalId={parseInt(props.match.params.animalId)}
             {...props}
           />
+        }} />
+        <Route path="/animals/new" render={(props) => {
+          return <AnimalForm {...props} />
         }} />
         <Route exact path="/locations" render={(props) => {
           return <LocationList />
@@ -39,9 +44,13 @@ class ApplicationViews extends Component {
             {...props}
           />
         }} />
-        <Route path="/employees" render={(props) => {
-          return <EmployeeList />
+        <Route exact path="/employees" render={(props) => {
+          return <EmployeeList {...props}/>
         }} />
+        <Route path="/employees/new" render={(props) => {
+          return <EmployeeForm {...props} />
+        }}
+        />
         <Route path="/owners" render={(props) => {
           return <OwnerList />
         }} />
