@@ -9,6 +9,7 @@ import AnimalDetail from './animal/AnimalDetail'
 import LocationDetail from './location/LocationDetail'
 import AnimalForm from './animal/AnimalForm'
 import EmployeeForm from './employee/EmployeeForm'
+import OwnerForm from './owner/OwnerForm'
 import Login from './auth/Login'
 import AnimalEditForm from './animal/AnimalEditForm'
 
@@ -94,13 +95,21 @@ class ApplicationViews extends Component {
           }
         }}
         />
-        <Route path="/owners" render={(props) => {
+        <Route exact path="/owners" render={(props) => {
           if (this.isAuthenticated()) {
-            return <OwnerList />
+            return <OwnerList {...props}/>
           } else {
             return <Redirect to="/login" />
           }
         }} />
+        <Route path="/owners/new" render={(props) => {
+          if (this.isAuthenticated()) {
+            return <OwnerForm {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
+        }}
+        />
         <Route path="/login" component={Login} />
       </React.Fragment>
     )

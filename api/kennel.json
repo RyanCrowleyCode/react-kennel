@@ -89,6 +89,12 @@
       "name": "Lucy Labradoo",
       "phone": "207-725-1489",
       "pictureName": "lucy-labradoo.png"
+    },
+    {
+      "name": "Karl Kaninesfriend",
+      "phone": "(615)-987-1111",
+      "pictureName": "defaultOwner.jpg",
+      "id": 5
     }
   ],
   "ownerAnimals": [
