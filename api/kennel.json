@@ -39,6 +39,12 @@
       "name": "John Dogson",
       "info": "John is our least favorite employee. He's always making customers uncomfortable, but he's the owner's nephew and we can't fire him. He hates dogs.",
       "pictureName": "john-dogson.jpg"
+    },
+    {
+      "name": "Mike Personface",
+      "info": "Mike is a great guy! He's real, human, and not pretend. He like dog much.",
+      "pictureName": "defaultEmployee.jpg",
+      "id": 4
     }
   ],
   "locations": [
