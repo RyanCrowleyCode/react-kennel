@@ -26,10 +26,10 @@ class AnimalDetail extends Component {
 
     handleDelete = () => {
         //invoke the delete function in AnimalManger and re-direct to the animal list.
-        this.setState({loadingStatus: true})
+        this.setState({ loadingStatus: true })
         ApiManager.delete(this.props.animalId, "animals")
-        // the push will put the /animals url on top of the history stack, so the url will change to /animals
-        .then(() => this.props.history.push("/animals"))
+            // the push will put the /animals url on top of the history stack, so the url will change to /animals
+            .then(() => this.props.history.push("/animals"))
     }
 
     render() {
@@ -41,7 +41,9 @@ class AnimalDetail extends Component {
                     </picture>
                     <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
                     <p>Breed: {this.state.breed}</p>
-                    <button type="button" disabled={this.state.loadingStatus} onClick=  {this.handleDelete}>
+                    <button type="button"
+                        onClick={() => { this.props.history.push(`/animals/${this.props.animalId}/edit`) }}>Edit</button>
+                    <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>
                         Discharge
                     </button>
                 </div>
