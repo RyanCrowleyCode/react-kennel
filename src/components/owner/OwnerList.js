@@ -33,14 +33,22 @@ class OwnerList extends Component {
 
     render() {
         return (
-            <div className="container-cards">
-                {this.state.owners.map(ownerObject =>
-                    <OwnerCard
-                        key={ownerObject.id}
-                        owner={ownerObject}
-                        deleteOwner={this.deleteOwner} />
-                )}
-            </div>
+            <React.Fragment>
+                <section className="section-content">
+                    <button type="button" className="btn"
+                        onClick={() => { this.props.history.push("/owners/new") }}>
+                        New Owner
+                    </button>
+                </section>
+                <div className="container-cards">
+                    {this.state.owners.map(ownerObject =>
+                        <OwnerCard
+                            key={ownerObject.id}
+                            owner={ownerObject}
+                            deleteOwner={this.deleteOwner} />
+                    )}
+                </div>
+            </React.Fragment>
         )
     }
 }
