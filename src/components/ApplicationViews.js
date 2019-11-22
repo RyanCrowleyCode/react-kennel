@@ -11,6 +11,7 @@ import AnimalForm from './animal/AnimalForm'
 import EmployeeForm from './employee/EmployeeForm'
 import Login from './auth/Login'
 import AnimalEditForm from './animal/AnimalEditForm'
+import EmployeeEditForm from './employee/EmployeeList'
 
 
 
@@ -58,7 +59,11 @@ class ApplicationViews extends Component {
         }} />
         <Route
           path="/animals/:animalId(\d+)/edit" render={props => {
-            return <AnimalEditForm {...props} />
+            if (this.isAuthenticated()) {
+              return <AnimalEditForm {...props} />
+            } else {
+              return <Redirect to="/login" />
+            }
           }}
         />
         <Route exact path="/locations" render={(props) => {
@@ -89,6 +94,14 @@ class ApplicationViews extends Component {
         <Route path="/employees/new" render={(props) => {
           if (this.isAuthenticated()) {
             return <EmployeeForm {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
+        }}
+        />
+        <Route path="/employees/:employeeId(\d+)/edit" render={props => {
+          if (this.isAuthenticated()) {
+            return <EmployeeEditForm {...props} />
           } else {
             return <Redirect to="/login" />
           }
