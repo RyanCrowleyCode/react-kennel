@@ -10,18 +10,18 @@ export default {
 
   delete(id, category) {
     return fetch(`http://localhost:5002/${category}/${id}`, {
-        method: "DELETE"
+      method: "DELETE"
     })
-    .then(result => result.json())
+      .then(result => result.json())
   },
 
   post(newObject, category) {
     return fetch(`${remoteURL}/${category}`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(newObject)
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newObject)
     }).then(data => data.json())
   },
 
@@ -33,5 +33,12 @@ export default {
       },
       body: JSON.stringify(editedObject)
     }).then(data => data.json());
+  },
+
+  // currently only works from employees with animals
+  getWithAnimals(id) {
+    return fetch(`${remoteURL}/employees/${id}?_embed=animals`)
+      .then(result => result.json())
   }
+  
 }
