@@ -26,12 +26,14 @@ class EmployeeWithAnimals extends Component {
                 return ApiManager.getWithAnimals(this.props.match.params.employeeId)
             })
             .then((APIResult) => {
+                // if employee still has animals, reset state and show remaining animals
                 if (APIResult.animals.length > 0) {
                     console.log(APIResult)
                     this.setState({
                         employee: APIResult,
                         animals: APIResult.animals,
                     })
+                // if employee doesn't have any more animals, go back to employees page
                 } else {
                     this.props.history.push("/employees")
                 }

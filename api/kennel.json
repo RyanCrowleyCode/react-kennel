@@ -7,6 +7,12 @@
       "employeeId": 3
     },
     {
+      "id": 2,
+      "name": "Decker",
+      "breed": "German Shepherd",
+      "employeeId": 3
+    },
+    {
       "id": 3,
       "name": "esme",
       "breed": "Pitbull",
@@ -16,6 +22,18 @@
       "name": "ada",
       "breed": "Terrier",
       "id": 4,
+      "employeeId": 2
+    },
+    {
+      "name": "Jack",
+      "breed": "Big cat",
+      "id": 5,
+      "employeeId": 1
+    },
+    {
+      "name": "Angus",
+      "breed": "Gerbil",
+      "id": 6,
       "employeeId": 2
     }
   ],
