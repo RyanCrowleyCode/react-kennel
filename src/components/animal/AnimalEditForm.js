@@ -3,46 +3,57 @@ import ApiManager from "../../modules/ApiManager"
 import "./AnimalForm.css"
 
 class AnimalEditForm extends Component {
-    //set the initial state
-    state = {
-      animalName: "",
-      breed: "",
-      loadingStatus: true,
+  //set the initial state
+  state = {
+    animalName: "",
+    breed: "",
+    employeeId: "",
+    loadingStatus: true,
+    employees: []
+  };
+
+  handleFieldChange = evt => {
+    const stateToChange = {}
+    stateToChange[evt.target.id] = evt.target.value
+    this.setState(stateToChange)
+  }
+
+  updateExistingAnimal = evt => {
+    evt.preventDefault()
+    this.setState({ loadingStatus: true });
+    const editedAnimal = {
+      id: this.props.match.params.animalId,
+      name: this.state.animalName,
+      breed: this.state.breed,
+      employeeId: Number(this.state.employeeId)
     };
 
-    handleFieldChange = evt => {
-      const stateToChange = {}
-      stateToChange[evt.target.id] = evt.target.value
-      this.setState(stateToChange)
-    }
-
-    updateExistingAnimal = evt => {
-      evt.preventDefault()
-      this.setState({ loadingStatus: true });
-      const editedAnimal = {
-        id: this.props.match.params.animalId,
-        name: this.state.animalName,
-        breed: this.state.breed
-      };
-
-      ApiManager.update(editedAnimal, "animals")
+    ApiManager.update(editedAnimal, "animals")
       .then(() => this.props.history.push("/animals"))
-    }
+  }
 
-    componentDidMount() {
-      ApiManager.get(this.props.match.params.animalId, "animals")
+  componentDidMount() {
+    ApiManager.get(this.props.match.params.animalId, "animals")
       .then(animal => {
-          this.setState({
-            animalName: animal.name,
-            breed: animal.breed,
-            loadingStatus: false,
-          });
-      });
-    }
+        this.setState({
+          animalName: animal.name,
+          breed: animal.breed,
+          loadingStatus: false,
+          employeeId: Number(animal.employeeId)
+        });
+      })
 
-    render() {
-      return (
-        <>
+    ApiManager.getAll("employees")
+      .then(employeeArray => {
+        this.setState({
+          employees: employeeArray
+        })
+      })
+  }
+
+  render() {
+    return (
+      <>
         <form>
           <fieldset>
             <div className="formgrid">
@@ -65,6 +76,18 @@ class AnimalEditForm extends Component {
                 value={this.state.breed}
               />
               <label htmlFor="breed">Breed</label>
+              <select
+                className="form-control"
+                id="employeeId"
+                value={this.state.employeeId}
+                onChange={this.handleFieldChange}
+              >
+                {this.state.employees.map(employee =>
+                  <option key={employee.id} value={employee.id}>
+                    {employee.name}
+                  </option>
+                )}
+              </select>
             </div>
             <div className="alignRight">
               <button
@@ -75,9 +98,9 @@ class AnimalEditForm extends Component {
             </div>
           </fieldset>
         </form>
-        </>
-      );
-    }
+      </>
+    );
+  }
 }
 
 export default AnimalEditForm

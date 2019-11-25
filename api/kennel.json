@@ -3,22 +3,20 @@
     {
       "id": 1,
       "name": "doodles",
-      "breed": "Poodle"
-    },
-    {
-      "id": 2,
-      "name": "decker",
-      "breed": "German Shepherd"
+      "breed": "Poodle",
+      "employeeId": 3
     },
     {
       "id": 3,
       "name": "esme",
-      "breed": "Pitbull"
+      "breed": "Pitbull",
+      "employeeId": 1
     },
     {
       "name": "ada",
       "breed": "Terrier",
-      "id": 4
+      "id": 4,
+      "employeeId": 2
     }
   ],
   "employees": [
@@ -106,16 +104,6 @@
     }
   ],
   "ownerAnimals": [
-    {
-      "id": 1,
-      "animalId": 2,
-      "ownerId": 2
-    },
-    {
-      "id": 2,
-      "animalId": 2,
-      "ownerId": 3
-    },
     {
       "id": 3,
       "animalId": 1,
