@@ -37,6 +37,7 @@ address {
 img {
   padding: 15px 0;
   display: block;
+  margin: 0 auto;
   border: 0;
   width: 250px;
   height: auto;

@@ -19,6 +19,7 @@ class NavBar extends Component {
             <li><Link className="nav-link" to="/locations">Locations</Link></li>
             {(this.props.user) ? <li><Link className="nav-link" to="/employees">Employees</Link></li> : null }
             {(this.props.user) ? <li><Link className="nav-link" to="/owners">Owners</Link></li> : null }
+            <li><Link className="nav-link" to="/login">Login</Link></li>
           </ul>
         </nav>
       </header>
